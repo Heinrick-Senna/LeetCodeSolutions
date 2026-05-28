@@ -4,8 +4,8 @@ function findCenter(edges: number[][]): number {
 
     for (const value of edges[0]) set.add(value);
 
-    for (const item of set) {
-        for (let i = 1; i < n; i++) {
+    for (let i = 1; i < n; i++) {
+        for (const item of set) {
             if (!edges[i].some(val => val == item)) set.delete(item);
         }
     }
