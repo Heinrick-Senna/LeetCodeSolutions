@@ -1,14 +1,8 @@
 function findCenter(edges: number[][]): number {
-    const set = new Set<number>();
-    const n = edges.length;
+    const graph: Map<number, null> = new Map()
+    graph.set(edges[0][0], null);
+    graph.set(edges[0][1], null);
 
-    for (const value of edges[0]) set.add(value);
-
-    for (let i = 1; i < n; i++) {
-        for (const item of set) {
-            if (!edges[i].some(val => val == item)) set.delete(item);
-        }
-    }
-
-    return Array.from(set)[0]
+    const val1 = edges[1][0];
+    return graph.has(val1) ? val1 : edges[1][1];
 };
