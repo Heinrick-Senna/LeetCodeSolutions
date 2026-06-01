@@ -1,14 +1,15 @@
 function minimumCost(cost: number[]): number {
     cost.sort((a, b) => a - b);
 
-    let sum = 0;
-    while (cost.length) {
-        let lastCost = cost.pop();
-        let secondCost = cost.pop();
-        let freeCandy = cost.pop();
+    let sum = 0, i = cost.length - 1;
+    while (i >= 0) {
+        const candy = cost.pop(), secondCandy = cost.pop();
+        
+        //Free Candy
+        cost.pop();
 
-        sum += lastCost || 0;
-        sum += secondCost || 0;
+        sum += (candy || 0) + (secondCandy || 0);
+        i = i-3;
     }
 
     return sum;
