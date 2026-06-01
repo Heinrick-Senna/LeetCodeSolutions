@@ -3,11 +3,7 @@ function minimumCost(cost: number[]): number {
 
     let sum = 0, i = cost.length - 1;
     while (i >= 0) {
-        const candy = cost.pop(), secondCandy = cost.pop();
-        
-        //Free Candy
-        cost.pop();
-
+        const candy = cost[i], secondCandy = cost[i-1];
         sum += (candy || 0) + (secondCandy || 0);
         i = i-3;
     }
