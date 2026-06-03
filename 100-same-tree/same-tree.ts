@@ -16,7 +16,7 @@ function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
     const checkEqual = (nodeOne?: TreeNode, nodeTwo?: TreeNode) => {
         if (nodeOne?.val != nodeTwo?.val || typeof nodeOne != typeof nodeTwo) return false;
 
-        if (!nodeOne && !nodeOne) return true;
+        if (!nodeOne) return true;
 
         const leftValue = nodeOne.left === null && nodeTwo.left === null ? true : checkEqual(nodeOne?.left, nodeTwo?.left);
         const rightValue = nodeOne.right === null && nodeTwo.right === null ? true : checkEqual(nodeOne?.right, nodeTwo?.right)
