@@ -1,11 +1,10 @@
 function countSubstrings(s: string, c: string): number {
-    let count = 0;
-    let pointer = 0;
-    for (const char of s) {
-        if (char == c) {
-            pointer++;
-            count += pointer;
+    let n = 0, p = 0;
+    for (const ch of s) {
+        if (ch == c) {
+            p++;
+            n += p;
         }
     }
-    return count
+    return n
 };
